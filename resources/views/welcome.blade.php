@@ -7,9 +7,10 @@
     <title>Welcome</title>
 </head>
 <body>
-    <h1>{{$name}} {{$surname}}</h1>
-    <h2>{{$id}}</h2>
-    <h2>{{$age}}</h2>
-    <h2>{{$birthdate}}</h2>
+    @foreach ($people as $ppl)
+        <p>
+            {{$ppl}}
+        </p>
+    @endforeach
 </body>
 </html>

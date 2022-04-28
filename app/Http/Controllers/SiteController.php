@@ -8,29 +8,45 @@ class SiteController extends Controller
 {
     //
     public function index() {
-        $id = 1;
-        $name = 'Joao';
-        $surname = 'Pereira';
-        $age = 27;
-        $birthdate = '22/12/1994';
 
-        $data = [
-            'id' => $id,
-            'name' => $name,
-            'age' => $age,
-            'surname' => $surname,
-            'birthdate' => $birthdate
-        ];
-        return view('welcome', $data);
-    }
-    public function exit() {
-        return view('sair');
-    }
-    public function users(Request $req){
-        $data = [
-            'quantity' => $req -> qtd
+        $pessoas = [
+            [
+                'image' => 'https://i.pravatar.cc/150?img='.rand(0,50),
+                'nome' => 'Alessandro',
+                'birth' => '29/01/90',
+                'idade' => 29],
+
+              [
+                'image' => 'https://i.pravatar.cc/150?img='.rand(0,50),
+                'nome' => 'Bonieky',
+                'birth' => '10/11/1933',
+                'idade' => 90],
+
+              [
+                'image' => 'https://i.pravatar.cc/150?img='.rand(0,50),
+                'nome' => 'Maria',
+                'birth' => '01/01/2020',
+                'idade' => 2]
         ];
 
-        return view('users', $data);
+        $dados['pessoas'] = $pessoas;
+
+        return view('bemvindo', $dados);
+    }
+
+
+
+
+    public function exercicio2() {
+
+        $numero = 1;
+
+
+        $url = 'https://i.pravatar.cc/150?img='.$numero;
+
+
+        $dados['url'] = $url;
+
+        return view('exercise', $dados);
     }
 }
