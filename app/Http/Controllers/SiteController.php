@@ -9,7 +9,7 @@ class SiteController extends Controller
     //
     public function index() {
 
-        $pessoas = [
+        $people = [
             [
                 'image' => 'https://i.pravatar.cc/150?img='.rand(0,50),
                 'nome' => 'Alessandro',
@@ -29,24 +29,24 @@ class SiteController extends Controller
                 'idade' => 2]
         ];
 
-        $dados['pessoas'] = $pessoas;
+        $data['people'] = $people;
 
-        return view('bemvindo', $dados);
+        return view('welcome', $data);
     }
 
 
 
 
-    public function exercicio2() {
+    public function exercise() {
 
-        $numero = 1;
-
-
-        $url = 'https://i.pravatar.cc/150?img='.$numero;
+        $number = 1;
 
 
-        $dados['url'] = $url;
+        $url = 'https://i.pravatar.cc/150?img='.$number;
 
-        return view('exercise', $dados);
+
+        $data['url'] = $url;
+
+        return view('exercise', $data);
     }
 }

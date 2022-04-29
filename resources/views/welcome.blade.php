@@ -8,9 +8,20 @@
 </head>
 <body>
     @foreach ($people as $ppl)
-        <p>
-            {{$ppl}}
-        </p>
+    @component('components.avatar')
+        @slot('image')
+            {{$ppl['image']}}
+        @endslot
+        @slot('nome')
+            {{$ppl['nome']}}
+        @endslot
+        @slot('idade')
+            {{$ppl['idade']}}
+        @endslot
+        @slot('birth')
+            {{$ppl['birth']}}
+        @endslot
+    @endcomponent
     @endforeach
 </body>
 </html>
